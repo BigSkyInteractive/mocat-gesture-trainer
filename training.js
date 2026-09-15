@@ -1,12 +1,12 @@
 /*
-Gesture Training -- TouchFree content page.
+Gesture Training -- MoCat content page.
 
 WHAT THIS FILE DOES AND DELIBERATELY DOES NOT DO.
 
 It renders. Every gesture number on screen was measured by the server and
 arrives over the WebSocket; this page never decides whether a gesture
 happened, never smooths a position, never re-derives a threshold. That is the
-TouchFree rule: the server is the sole authority and the
+MoCat rule: the server is the sole authority and the
 UI is a pure renderer. A training page that scored gestures itself would teach
 people to satisfy the page rather than the product.
 
@@ -42,7 +42,7 @@ its value actually changes, never 30 times a second.
   fit();
 
   // ---- landmark tables --------------------------------------------------
-  // TouchFree's landmark order, and the same edge tables the dashboard's own
+  // MoCat's landmark order, and the same edge tables the dashboard's own
   // camera view uses, so the two draw the same body.
   // The eleven head points are deliberately not drawn: at kiosk distance they
   // cluster into a scribble over the person's face, and nothing downstream
@@ -345,7 +345,7 @@ its value actually changes, never 30 times a second.
     if (!w) { return say(diagMissing() || s.hint_idle); }
 
     if (justFired() && fired.label === 'wave') {
-      // Name the key the gesture actually dispatched: TouchFree sends
+      // Name the key the gesture actually dispatched: MoCat sends
       // ArrowRight for forward and ArrowLeft for back, so this is what a
       // content page underneath would just have received.
       return say(fired.action === 'navigate_back'
@@ -587,14 +587,14 @@ its value actually changes, never 30 times a second.
     // THE ROI IS DRAWN EXACTLY AS IT ARRIVES. No client-side easing.
     //
     // This page used to lerp the displayed ROI toward the real one at 0.15 per
-    // frame. TouchFree ALREADY smooths it server-side, so that put a second
+    // frame. MoCat ALREADY smooths it server-side, so that put a second
     // filter in series and roughly doubled the lag.
     // Worse than the lag, a 103 ms filter chasing a target that only moves at
     // 15 Hz never catches up, so the box trailed and rubber-banded instead of
     // tracking. The dashboard's own camera view does none of this and looks
     // markedly better for it.
     //
-    // It is also the TouchFree rule:
+    // It is also the MoCat rule:
     // "The server is the sole authority. The UI is a pure renderer. No
     // client-side smoothing, position computation, or gesture logic."
     // Smoothing the server's own output is exactly that, and the result was

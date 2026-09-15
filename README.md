@@ -1,12 +1,12 @@
-# TouchFree Gesture Trainer sample content that demonstrates the use of gesture control with video and metrics to make a custom interactive experience.
+# MoCat Gesture Trainer sample content that demonstrates the use of gesture control with video and metrics to make a custom interactive experience.
 
-An interactive web page to onboard users to gesture control using the TouchFree API for gesture control and video frame imbedded in the page.
+An interactive web page to onboard users to gesture control using the MoCat API for gesture control and video frame imbedded in the page.
 
 User clicks three targets a pointed finger, waves left and right, and gets a "Good Job". Beside them, a circular live view of
 themselves with their own skeleton drawn on it, which zooms in on their hand the
 moment the tracker locks onto it.
 
-This is a shipping [TouchFree](https://bigskyinteractive.com) content page, published for free to use as an example how to use gesture interaction and use the camera view from TouchFree with landmark and skeleton overlay.
+This is a shipping [MoCat](https://bigskyinteractive.com) content page, published for free to use as an example how to use gesture interaction and use the camera view from MoCat with landmark and skeleton overlay.
 
 1. **Show the live camera** with the tracker's own overlay geometry on top.
 2. **Read the recognizer's per-frame telemetry**, so a page can tell somebody
@@ -17,9 +17,9 @@ step, no framework, no external requests.
 
 ---
 
-## How a TouchFree page works, in one paragraph
+## How a MoCat page works, in one paragraph
 
-TouchFree runs a local server on the machine the camera is plugged into. Your
+MoCat runs a local server on the machine the camera is plugged into. Your
 page is served from it, so it is **same-origin** and can call the API and open
 the WebSocket with no CORS setup and no credentials. Gestures arrive as ordinary
 browser input: the pointing finger moves a real cursor and dispatches real
@@ -282,7 +282,7 @@ coaching line or the left column, by name, in the console.
 
 ## Running it
 
-Serve this folder from a TouchFree machine and open `index.html`. As a shipped
+Serve this folder from a MoCat machine and open `index.html`. As a shipped
 content page it appears in the dashboard's content list by folder name.
 
 ## Files
@@ -294,11 +294,11 @@ content page it appears in the dashboard's content list by folder name.
 | `lessons.json` | Every setting and every word |
 | `media/*.webm` | The demonstration clips |
 
-## Also from TouchFree
+## Also from MoCat
 
-- [touchfree-fluid-body](https://github.com/BigSkyInteractive/touchfree-fluid-body) — body landmarks driving a WebGL fluid simulation
-- [touchfree-receiver-kit](https://github.com/BigSkyInteractive/touchfree-receiver-kit) — driving rigged 3D characters
-- [touchfree-puppet-2d](https://github.com/BigSkyInteractive/touchfree-puppet-2d) — a flat cartoon puppet that copies the person
+- [mocat-fluid-body](https://github.com/BigSkyInteractive/mocat-fluid-body) — body landmarks driving a WebGL fluid simulation
+- [mocat-receiver-kit](https://github.com/BigSkyInteractive/mocat-receiver-kit) — driving rigged 3D characters
+- [mocat-puppet-2d](https://github.com/BigSkyInteractive/mocat-puppet-2d) — a flat cartoon puppet that copies the person
 
 ## License
 
